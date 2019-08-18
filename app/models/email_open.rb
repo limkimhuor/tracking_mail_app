@@ -1,0 +1,2 @@
+class EmailOpen < ApplicationRecord
+end

@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: "homes#index"
+  resources :homes, only: %i(index create)
+  get "/beacon", to: "tracking#beacon"
+
+  mount LetterOpenerWeb::Engine, at: "/mail" if Rails.env.development?
 end
